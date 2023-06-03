@@ -10,14 +10,11 @@ public class Level3Manager : MonoBehaviour
     [SerializeField] private GameObject lever;
 
     private bool hasButtonDropped = false;
-    private bool hasButtonStopped = false;
     void Start()
     {
         //disable rigidbody
         buttons[1].GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-        
-
-        
+    
     }
 
     // Update is called once per frame
@@ -42,6 +39,6 @@ public class Level3Manager : MonoBehaviour
 
         //enable rigidbody
         buttons[1].GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-        buttons[1].GetComponent<Rigidbody2D>().velocity.Set(0, 1);
     }
+
 }

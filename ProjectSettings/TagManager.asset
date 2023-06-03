@@ -8,6 +8,7 @@ TagManager:
   - LeverTrigger
   - Trampoline
   - DeathButton
+  - Ground
   layers:
   - Default
   - TransparentFX

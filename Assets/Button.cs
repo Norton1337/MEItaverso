@@ -5,7 +5,7 @@ public class Button : MonoBehaviour
     public Vector3 originalPosition;
     private bool moveBack = false;
     public bool isPressed = false;
-    private Vector2 minYpos = new Vector2(0, 0);
+    public Vector2 minYpos = new Vector2(0, 0);
 
     private void Start()
     {
