@@ -7,6 +7,7 @@ TagManager:
   - CannonTrigger
   - LeverTrigger
   - Trampoline
+  - DeathButton
   layers:
   - Default
   - TransparentFX
