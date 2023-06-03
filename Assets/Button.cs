@@ -17,9 +17,12 @@ public class Button : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player") && transform.position.y > minYpos.y)
         {
-            transform.Translate(0, -0.03f, 0);
-            moveBack = false;
-            Debug.Log("Player is on the button");
+            Vector2 contactNormal = collision.GetContact(0).normal;
+            if (contactNormal.x == 0) {
+                transform.Translate(0, -0.03f, 0);
+                moveBack = false;
+                Debug.Log("Player is on the button");
+            }
         }
     }
 
