@@ -12,6 +12,9 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rb;
     private Quaternion initialRotation;
     private bool inCannon;
+    public Vector3 aimDirection;
+
+    public bool isLaunched = false;
     
     void Start()
     {
@@ -21,11 +24,12 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
+        isLaunched = GameManager.Instance.playerLaunched;
         // get is player in cannon from GameManager
         inCannon = GameManager.Instance.playerInCannon;
         
 
-        if(!inCannon)
+        if(!inCannon && !isLaunched)
         {
             Move = Input.GetAxis("Horizontal");
             rb.velocity = new Vector2(Move * speed, rb.velocity.y);
@@ -34,13 +38,19 @@ public class Movement : MonoBehaviour
                 rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             }
         }
-       
+        
+      
 
-        // Aim towards the mouse position
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 aimDirection = mousePos - transform.position;
-        aimDirection.z = 0f;
-        aimDirection.Normalize();
+        if (isLaunched)
+        {
+            if(Mathf.Abs(rb.velocity.x) < 0.001f && Mathf.Abs(rb.velocity.y) < 0.001f){
+                GameManager.Instance.playerLaunched = false;
+            }
+                
+        }
+        
+
+        GetAimDirection();
 
         // Calculate the rotation angle
         float angle = (Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg) + Mathf.Rad2Deg;
@@ -57,6 +67,16 @@ public class Movement : MonoBehaviour
        
     
 
+    }
+
+
+    public Vector3 GetAimDirection()
+    {
+         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        aimDirection = mousePos - transform.position;
+        aimDirection.z = 0f;
+        aimDirection.Normalize();
+        return aimDirection;
     }
     
     

@@ -6,16 +6,15 @@ public class CannonTrigger : MonoBehaviour
 {
     public bool playerInRange = false;
     private bool inCannon = false;
-    private void OnMouseDown()
+    private void Update()
     {
-        inCannon = GameManager.Instance.playerInCannon;
-        if (playerInRange && !inCannon)
-        {   
+        if (playerInRange && Input.GetKeyDown(KeyCode.E) && !inCannon)
+        {
             Debug.Log("Player entered the cannon!");
-            GameManager.Instance.PlayerInteractCannon();
+            //get trigger position
+            
+            GameManager.Instance.PlayerEnterCannon(transform.position);
         }
-        
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
