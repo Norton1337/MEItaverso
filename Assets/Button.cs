@@ -4,7 +4,7 @@ public class Button : MonoBehaviour
 {
     public Vector3 originalPosition;
     private bool moveBack = false;
-
+    public bool isPressed = false;
     private Vector2 minYpos = new Vector2(0, 0);
 
     private void Start()
@@ -22,6 +22,7 @@ public class Button : MonoBehaviour
                 transform.Translate(0, -0.03f, 0);
                 moveBack = false;
                 Debug.Log("Player is on the button");
+                isPressed = true;
             }
         }
     }
@@ -34,6 +35,7 @@ public class Button : MonoBehaviour
             moveBack = true;
             GetComponent<SpriteRenderer>().color = Color.white;
             Debug.Log("Player left the button");
+            isPressed = false;
         }
     }
 

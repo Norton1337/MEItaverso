@@ -8,7 +8,7 @@ public class LeverTrigger : MonoBehaviour
     public Sprite activatedSprite;
     public Sprite deactivatedSprite;
 
-    private bool isActive = false;
+    public bool isActive = false;
     private SpriteRenderer spriteRenderer;
 
     void Start()
