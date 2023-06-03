@@ -15,7 +15,8 @@ public class Button : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.transform.CompareTag("Player") && transform.position.y > minYpos.y)
+        if (collision.transform.CompareTag("Player")  || collision.transform.CompareTag("Unalive")
+         && transform.position.y > minYpos.y)
         {
             Vector2 contactNormal = collision.GetContact(0).normal;
             if (contactNormal.x == 0) {
@@ -29,7 +30,7 @@ public class Button : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.transform.CompareTag("Player"))
+        if (collision.transform.CompareTag("Player") || collision.transform.CompareTag("Unalive"))
         {
             collision.transform.parent = null;
             moveBack = true;
@@ -41,7 +42,7 @@ public class Button : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.CompareTag("Player"))
+        if (collision.transform.CompareTag("Player") || collision.transform.CompareTag("Unalive"))
         {
             collision.transform.parent = transform;
             GetComponent<SpriteRenderer>().color = Color.red;

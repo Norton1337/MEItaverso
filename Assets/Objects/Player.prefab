@@ -216,6 +216,10 @@ MonoBehaviour:
   maxBounceCount: 3
   bounceSpeed: 15
   bounceSpeedIncrement: 5
+  isDead: 0
+  deadBodyActive: 0
+  ghostSprite: {fileID: 8421373305666291113, guid: 403f2d1f2f59d1245a150d43c8d2f93b, type: 3}
+  spawnedSprite: {fileID: 0}
 --- !u!70 &3251962059555479282
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

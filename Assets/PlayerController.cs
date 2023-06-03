@@ -21,8 +21,10 @@ public class PlayerController : MonoBehaviour
     public float bounceSpeed = 5f;
     public float bounceSpeedIncrement = 2f;
     
-    private bool isDead = false;
-    private bool deadBodyActive = false;
+    public bool isDead = false;
+    public bool deadBodyActive = false;
+    public GameObject ghostSprite;
+    public GameObject spawnedSprite;
     
     void Start()
     {
@@ -54,6 +56,8 @@ public class PlayerController : MonoBehaviour
             if(Mathf.Abs(rb.velocity.x) < 0.001f && Mathf.Abs(rb.velocity.y) < 0.001f){
                 GameManager.Instance.playerLaunched = false;
             }
+
+            isDead = true;
                 
         }
         
@@ -72,9 +76,13 @@ public class PlayerController : MonoBehaviour
         // Position the aim triangle close to the player
         aimTriangle.transform.position = transform.position + aimDirection * 2f;
 
-       
-    
-
+       if (isDead && Input.GetKeyDown(KeyCode.X)) {
+            Destroy(spawnedSprite);
+            bounceCount = 0;
+            isDead = !isDead;
+            deadBodyActive = !deadBodyActive;
+            //change player texture
+        }
     }
 
 
@@ -88,11 +96,8 @@ public class PlayerController : MonoBehaviour
     }
     
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (isDead && !deadBodyActive) {
-            //create immovable dead body that interacts with environment on same position as player
-            //change sprite to ghost
-            deadBodyActive = true;
-        }
+        checkDead();
+
         if(!isDead){
             if (collision.gameObject.CompareTag("Trampoline")) {
             //Only jumps if player is touching the top of the trampoline
@@ -119,5 +124,15 @@ public class PlayerController : MonoBehaviour
         
         
     }
+
+    public void checkDead() {
+        if (isDead && !deadBodyActive) {
+            Vector3 spawnPosition = transform.position;
+            spawnedSprite = Instantiate(ghostSprite, spawnPosition, Quaternion.identity);
+            spawnedSprite.transform.Rotate(0f,0f,90f);
+            deadBodyActive = true;
+        }
+    }
+        
     
 }
