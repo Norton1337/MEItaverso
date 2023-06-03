@@ -14,7 +14,7 @@ public class LeverTrigger : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = deactivatedSprite;   
+        spriteRenderer.sprite = deactivatedSprite;
         DeactivateLever();
     }
     // Update is called once per frame
@@ -31,7 +31,7 @@ public class LeverTrigger : MonoBehaviour
             {
                 DeactivateLever();
             }
-          
+
         }
     }
 
@@ -58,7 +58,7 @@ public class LeverTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            
+
             playerInRange = true;
         }
     }

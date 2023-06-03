@@ -102,7 +102,6 @@ public class Movement : MonoBehaviour
                 if (bounceCount < maxBounceCount) {
                     float bounce = bounceSpeed + (bounceCount * bounceSpeedIncrement);
                     rb.AddForce(Vector2.up * bounce, ForceMode2D.Impulse);
-                    isJumping = true;
 
                     bounceCount++;
                     if (bounceCount == maxBounceCount) {
