@@ -22,7 +22,6 @@ public class Button : MonoBehaviour
             if (contactNormal.x == 0) {
                 transform.Translate(0, -0.03f, 0);
                 moveBack = false;
-                Debug.Log("Player is on the button");
                 isPressed = true;
             }
         }
@@ -35,7 +34,6 @@ public class Button : MonoBehaviour
             collision.transform.parent = null;
             moveBack = true;
             GetComponent<SpriteRenderer>().color = Color.white;
-            Debug.Log("Player left the button");
             isPressed = false;
         }
     }
@@ -46,7 +44,6 @@ public class Button : MonoBehaviour
         {
             collision.transform.parent = transform;
             GetComponent<SpriteRenderer>().color = Color.red;
-            Debug.Log("Player touched the button");
         }
     }
 

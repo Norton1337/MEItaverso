@@ -18,8 +18,8 @@ public class PlayerController : MonoBehaviour
 
     public int bounceCount = 0;
     public int maxBounceCount = 3;
-    public float bounceSpeed = 5f;
-    public float bounceSpeedIncrement = 2f;
+    public float bounceSpeed = 15f;
+    public float bounceSpeedIncrement = 10f;
     
     public bool isDead = false;
     public bool deadBodyActive = false;

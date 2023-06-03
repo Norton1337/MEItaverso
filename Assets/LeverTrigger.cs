@@ -22,7 +22,6 @@ public class LeverTrigger : MonoBehaviour
     {
          if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Player toggled lever");
             if (!isActive)
             {
                 ActivateLever();
@@ -40,7 +39,6 @@ public class LeverTrigger : MonoBehaviour
         isActive = true;
         spriteRenderer.sprite = activatedSprite;
         // Perform lever activation behavior here
-        Debug.Log("Lever activated!");
 
     }
 
@@ -50,7 +48,6 @@ public class LeverTrigger : MonoBehaviour
         isActive = false;
         spriteRenderer.sprite = deactivatedSprite;
         // Perform lever deactivation behavior here
-        Debug.Log("Lever deactivated!");
 
     }
 

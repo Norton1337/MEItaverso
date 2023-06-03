@@ -7,7 +7,7 @@ public class level2_manager : MonoBehaviour
     [SerializeField] private GameObject door;
     [SerializeField] private GameObject Lever;
     [SerializeField] private GameObject Button;
-
+    [SerializeField] private GameObject DropablePlatform;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +22,9 @@ public class level2_manager : MonoBehaviour
            Destroy(door);
         }
 
+        //TODO: METER A PLATAFORMA A CAIR QUANDO O BOTAO FOR PRESSIONADO
+        /* if(GetComponent<Button>().isPressed){
+            DropablePlatform.GetComponent<Rigidbody2D>().gravityScale = 1;
+        } */
     }
 }

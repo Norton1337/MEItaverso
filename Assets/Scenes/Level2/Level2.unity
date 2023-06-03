@@ -123,6 +123,16 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &28842843 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1705770646850354168, guid: 850db1d5ef415544a93abb4fffb89900, type: 3}
+  m_PrefabInstance: {fileID: 847977855}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &63914241 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5581229174735626024, guid: e149e7cf07d3dcd4bb8d3b63b1e5862d, type: 3}
+  m_PrefabInstance: {fileID: 794812771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &264185138
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,6 +580,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 850db1d5ef415544a93abb4fffb89900, type: 3}
+--- !u!1 &964615819 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4655180320909213639, guid: 470ee86190f8e1045af7e602a8a62809, type: 3}
+  m_PrefabInstance: {fileID: 4655180319870632941}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &981794301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1003,7 +1018,7 @@ GameObject:
   - component: {fileID: 1424669304}
   m_Layer: 0
   m_Name: Moving floor
-  m_TagString: Untagged
+  m_TagString: MovableBase
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1666,6 +1681,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2005042519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2005042521}
+  - component: {fileID: 2005042520}
+  m_Layer: 0
+  m_Name: level2_manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2005042520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005042519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2874758fbce7d674ebaeea94c6ac1b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door: {fileID: 964615819}
+  Lever: {fileID: 63914241}
+  Button: {fileID: 28842843}
+--- !u!4 &2005042521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005042519}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5553057, y: -0.48453188, z: -10.057325}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2056257867
 GameObject:
