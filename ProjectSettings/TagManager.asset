@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - CannonTrigger
+  - LeverTrigger
   layers:
   - Default
   - TransparentFX
