@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CannonTrigger
   - LeverTrigger
+  - Trampoline
   layers:
   - Default
   - TransparentFX

@@ -9,14 +9,14 @@ public class GameManager : MonoBehaviour
     private CannonTrigger cannonTrigger;
     private Vector3 originalPlayerPosition;
     private GameObject playerObject;
-    private Camera mainCamera;
+
     private bool playerInCannonRage;
     private float launchForce = 50f;
     public bool playerLaunched = false;
     private void Awake()
     {
         playerObject = GameObject.FindGameObjectWithTag("Player");
-        mainCamera = playerObject.GetComponentInChildren<Camera>();
+        // mainCamera = playerObject.GetComponentInChildren<Camera>();
         cannonTrigger = GetComponent<CannonTrigger>();
         
         if (Instance == null)
@@ -58,8 +58,6 @@ public class GameManager : MonoBehaviour
             // Set the player's position to the cannonTrigger's position
             playerObject.transform.position = cannonPosition;
 
-            // Set the camera's position to the cannon's position
-            mainCamera.transform.position = new Vector3(transform.position.x, transform.position.y, mainCamera.transform.position.z);
             
             Rigidbody2D playerRigidbody = playerObject.GetComponent<Rigidbody2D>();
             playerRigidbody.velocity = Vector2.zero; 
@@ -71,17 +69,13 @@ public class GameManager : MonoBehaviour
         if (playerInCannon)
         {
             //get aimDirection from player
-            Vector3 aimDirection = playerObject.GetComponent<Movement>().GetAimDirection();
+            Vector3 aimDirection = playerObject.GetComponent<PlayerController>().GetAimDirection();
             Debug.Log("Player exited the cannon!");
             playerInCannon = false;
 
             // Enable the player's sprite renderer to make it visible again
             SpriteRenderer playerSpriteRenderer = playerObject.GetComponent<SpriteRenderer>();
             playerSpriteRenderer.enabled = true;
-
-
-            // Reset the camera's position to the original position or any desired position
-            mainCamera.transform.position = new Vector3(originalPlayerPosition.x, originalPlayerPosition.y, mainCamera.transform.position.z);
 
             
 
