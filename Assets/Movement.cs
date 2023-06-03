@@ -16,7 +16,13 @@ public class Movement : MonoBehaviour
 
     public bool isLaunched = false;
 
+    public int bounceCount = 0;
+    public int maxBounceCount = 3;
+    public float bounceSpeed = 5f;
+    public float bounceSpeedIncrement = 2f;
     
+    private bool isDead = false;
+    private bool deadBodyActive = false;
     
     void Start()
     {
@@ -81,5 +87,32 @@ public class Movement : MonoBehaviour
         return aimDirection;
     }
     
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (isDead && !deadBodyActive) {
+            //create immovable dead body that interacts with environment on same position as player
+            //change sprite to ghost
+            deadBodyActive = true;
+        }
+
+        if (collision.gameObject.CompareTag("Trampoline")) {
+            //Only jumps if player is touching the top of the trampoline
+            Vector2 contactNormal = collision.GetContact(0).normal;
+
+            if (contactNormal.y > 0.9f) {
+                if (bounceCount < maxBounceCount) {
+                    float bounce = bounceSpeed + (bounceCount * bounceSpeedIncrement);
+                    rb.AddForce(Vector2.up * bounce, ForceMode2D.Impulse);
+                    isJumping = true;
+
+                    bounceCount++;
+                    if (bounceCount == maxBounceCount) {
+                        isDead = true;
+                    }
+                }
+            }
+        } else {
+            bounceCount = 0;
+        }
+    }
     
 }
