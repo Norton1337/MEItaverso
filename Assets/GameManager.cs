@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         playerObject = GameObject.FindGameObjectWithTag("Player");
-        // mainCamera = playerObject.GetComponentInChildren<Camera>();
         cannonTrigger = GetComponent<CannonTrigger>();
         
         if (Instance == null)
