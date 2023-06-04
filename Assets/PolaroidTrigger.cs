@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PolaroidTrigger : MonoBehaviour
@@ -41,7 +42,18 @@ public class PolaroidTrigger : MonoBehaviour
          if (playerInRange==true && Input.GetKeyDown(KeyCode.E) && player.GetComponent<PlayerController>().isDead == false)
         {
            gotPolaroid = true;
-           Debug.Log("Polaroid is active");
+           int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+
+        // Check if there are more scenes available
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        else
+        {
+            Application.Quit();
+        }
         }
     }
 }

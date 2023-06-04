@@ -9,21 +9,45 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/1st cutscene/1st_cutscene.unity
+    guid: adf05aa57750fe44d85c67c98e5ebb1b
+  - enabled: 1
     path: Assets/Scenes/Level1/Level1.unity
     guid: 172f36e0e6f9e0348a2fddecc30ce046
+  - enabled: 1
+    path: Assets/Scenes/2nd_cutscene/2nd_cutscene.unity
+    guid: bc68336c7b74b274d9725f112f767855
   - enabled: 1
     path: Assets/Scenes/Level2/Level2.unity
     guid: 4fa311a289267b940976900c205a0959
   - enabled: 1
+    path: Assets/Scenes/3rd_cutscene/3c.unity
+    guid: a5cb0a116fe4bf8458d2c2b8506468d8
+  - enabled: 1
     path: Assets/Scenes/Level3/Level3.unity
     guid: 42a755c57e090c34882db81b5cad86d1
+  - enabled: 1
+    path: Assets/Scenes/4rd_cut/4c.unity
+    guid: 6bdc02040dad6c54b992d2dc775ef082
   - enabled: 1
     path: Assets/Scenes/Level4/Level4.unity
     guid: ffc916bcb5e231348a713038b300e7ad
   - enabled: 1
+    path: Assets/Scenes/5th_cu/5c.unity
+    guid: b049335d07459894a83f9d5c53c6e0c9
+  - enabled: 1
     path: Assets/Scenes/Level5/Level5.unity
     guid: 92f5fefe8b710b246a02a535e7bf427c
   - enabled: 1
+    path: Assets/Scenes/6c/6c.unity
+    guid: 01c8f17e604d0ee4796cfe59b0ca0c9e
+  - enabled: 1
     path: Assets/Scenes/Level6/Level6.unity
     guid: fc993ba4335476c4b8d13d38a1195959
+  - enabled: 1
+    path: Assets/Scenes/7c1/7c.unity
+    guid: 700ab34ce9f848546a0e8757a3e0fa2c
+  - enabled: 1
+    path: Assets/Scenes/7c2/7c2.unity
+    guid: 8a5e01f60a524084fa4bd6ddb5cd2ce6
   m_configObjects: {}
