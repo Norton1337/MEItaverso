@@ -48,12 +48,12 @@ public class GameManager : MonoBehaviour
     public void PlayerEnterCannon(Vector3 cannonPosition){
         if (!playerInCannon)
         {   
-            Debug.Log("Player entered the cannon! Game Manager");
+
 
             playerInCannon = true;
 
             // Disable the player's sprite renderer to make it disappear
-            SpriteRenderer playerSpriteRenderer = playerObject.GetComponent<SpriteRenderer>();
+            SpriteRenderer playerSpriteRenderer = playerObject.GetComponentInChildren<SpriteRenderer>();
             playerSpriteRenderer.enabled = false;
 
             // Store the original player position
@@ -62,9 +62,9 @@ public class GameManager : MonoBehaviour
             // Set the player's position to the cannonTrigger's position
             playerObject.transform.position = cannonPosition;
 
-            
+            // Reset the velocity of the player
             Rigidbody2D playerRigidbody = playerObject.GetComponent<Rigidbody2D>();
-            playerRigidbody.velocity = Vector2.zero; 
+            playerRigidbody.velocity = Vector2.zero;
         }
        
     }
@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
             playerInCannon = false;
 
             // Enable the player's sprite renderer to make it visible again
-            SpriteRenderer playerSpriteRenderer = playerObject.GetComponent<SpriteRenderer>();
+            SpriteRenderer playerSpriteRenderer = playerObject.GetComponentInChildren<SpriteRenderer>();
             playerSpriteRenderer.enabled = true;
 
             
@@ -86,8 +86,7 @@ public class GameManager : MonoBehaviour
             // Add force to the player rigidbody to launch them in the aim direction
             Rigidbody2D playerRigidbody = playerObject.GetComponent<Rigidbody2D>();
             playerRigidbody.velocity = new Vector2(aimDirection.x * launchForce, aimDirection.y * launchForce);
-            Debug.Log("aimDirection: " + aimDirection);
-            Debug.Log("velocity: " + playerRigidbody.velocity);
+
 
             playerLaunched = true;
 

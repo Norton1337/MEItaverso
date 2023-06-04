@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public Transform aimPivot;
     private Rigidbody2D rb;
     private Quaternion initialRotation;
-    private bool inCannon;
+    public bool inCannon;
     public Vector3 aimDirection;
 
     public bool isLaunched = false;
@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     public int maxBounceCount = 3;
     public float bounceSpeed = 15f;
     public float bounceSpeedIncrement = 10f;
+
+    public bool isWalking;
+    public bool isWalkingLeft;
     
     public bool isDead = false;
     public bool deadBodyActive = false;
@@ -44,6 +47,23 @@ public class PlayerController : MonoBehaviour
         {
             
             Move = Input.GetAxis("Horizontal");
+           
+            if (Move != 0)
+            {
+                isWalking = true;
+            }
+            else
+            {
+                isWalking = false;
+            }
+            if (Move < 0)
+            {
+                isWalkingLeft = true;
+            }
+            else
+            {
+                isWalkingLeft = false;
+            }
             rb.velocity = new Vector2(Move * speed, rb.velocity.y);
             if (Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < 0.001f)
             {
@@ -128,7 +148,6 @@ public class PlayerController : MonoBehaviour
     public void checkDead() {
         if (isDead && !deadBodyActive) {
             //check if player stopped moving
-            Debug.Log(Mathf.Abs(rb.velocity.x) + " " + Mathf.Abs(rb.velocity.y));
             if(Mathf.Abs(rb.velocity.x) < 0.001f && Mathf.Abs(rb.velocity.y) < 0.001f){
                 Vector3 spawnPosition = transform.position;
                 spawnedSprite = Instantiate(ghostSprite, spawnPosition, Quaternion.identity);
@@ -145,7 +164,15 @@ public class PlayerController : MonoBehaviour
         bounceCount = 0;
         isDead = !isDead;
         deadBodyActive = !deadBodyActive;
-        //change player texture
+
+    }
+
+    public bool isWalkingRight() {
+        return !isWalkingLeft;
+    }
+
+    public bool getIsWalking() {
+        return isWalking;
     }
     
 }
