@@ -33,7 +33,6 @@ public class Button : MonoBehaviour
         {
             collision.transform.parent = null;
             moveBack = true;
-            GetComponent<SpriteRenderer>().color = Color.white;
             isPressed = false;
         }
     }
@@ -43,7 +42,6 @@ public class Button : MonoBehaviour
         if (collision.transform.CompareTag("Player") || collision.transform.CompareTag("Unalive"))
         {
             collision.transform.parent = transform;
-            GetComponent<SpriteRenderer>().color = Color.red;
         }
     }
 
