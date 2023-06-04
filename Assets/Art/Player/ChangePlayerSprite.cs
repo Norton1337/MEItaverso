@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeSprite : MonoBehaviour
+public class ChangePlayerSprite : MonoBehaviour
 {
     public Sprite[] walkSprites;
     public Sprite deadSprite;

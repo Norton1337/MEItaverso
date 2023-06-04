@@ -5,16 +5,11 @@ using UnityEngine;
 public class LeverTrigger : MonoBehaviour
 {
     public bool playerInRange = false;
-    public Sprite activatedSprite;
-    public Sprite deactivatedSprite;
-
     public bool isActive = false;
-    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = deactivatedSprite;
+
         DeactivateLever();
     }
     // Update is called once per frame
@@ -37,8 +32,7 @@ public class LeverTrigger : MonoBehaviour
     private void ActivateLever()
     {
         isActive = true;
-        spriteRenderer.sprite = activatedSprite;
-        // Perform lever activation behavior here
+
 
     }
 
@@ -46,8 +40,7 @@ public class LeverTrigger : MonoBehaviour
     {
 
         isActive = false;
-        spriteRenderer.sprite = deactivatedSprite;
-        // Perform lever deactivation behavior here
+
 
     }
 
