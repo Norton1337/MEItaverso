@@ -17,6 +17,8 @@ public class level6_management : MonoBehaviour
 
     [SerializeField] private GameObject player;
 
+    [SerializeField] private GameObject Polaroid;  
+
     [SerializeField] private GameObject door;
 
     private Vector2 startingPlayerPos;

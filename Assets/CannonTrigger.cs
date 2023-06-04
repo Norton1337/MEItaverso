@@ -5,7 +5,7 @@ using UnityEngine;
 public class CannonTrigger : MonoBehaviour
 {
     public bool playerInRange = false;
-    private bool inCannon = false;
+    public bool inCannon = false;
     private void Update()
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E) && !inCannon)

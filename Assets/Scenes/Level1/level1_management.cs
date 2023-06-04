@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class level1_management : MonoBehaviour
 {
@@ -12,6 +13,15 @@ public class level1_management : MonoBehaviour
     [SerializeField] private GameObject Parede;
     [SerializeField] private GameObject Player;
 
+    [SerializeField] private GameObject Canvas;
+    [SerializeField] private GameObject Only_Alive_Button;
+    [SerializeField] private GameObject Only_Alive_BoxDrag;
+    [SerializeField] private GameObject Dead_revive;
+
+    [SerializeField] private GameObject Polaroid;    
+
+    
+
     public int ctdr = 0;
     public float ctdrHeight = 0;
     public float maxHeight = 3f;
@@ -22,11 +32,24 @@ public class level1_management : MonoBehaviour
     void Start()
     {
         GameOverScreen.SetActive(false);   
+        Canvas.SetActive(true);
+        Dead_revive.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        if( Player.GetComponent<PlayerController>().isDead == true){
+            Only_Alive_Button.SetActive(false);
+            Only_Alive_BoxDrag.SetActive(false);
+            Dead_revive.SetActive(true);
+
+        }else{
+            Dead_revive.SetActive(false);
+            Only_Alive_Button.SetActive(true);
+            Only_Alive_BoxDrag.SetActive(true);
+        }
 
         if (Lever.GetComponent<LeverTrigger>().isActive && ctdrHeight < maxHeight) {
             Parede.transform.Translate(0,0.01f,0);
@@ -36,15 +59,13 @@ public class level1_management : MonoBehaviour
         if(Button.GetComponent<Button>().isPressed == true && ctdr < 1){
             GameOverScreen.SetActive(true);
             StartCoroutine(PauseGame());
-            Debug.Log("Game Resumed After 3 Seconds End Screen");
             ctdr++;
         }
 
         if( Button.GetComponent<Button>().isPressed && Lever.GetComponent<LeverTrigger>().isActive
         ){
-            Debug.Log("Button is pressed and lever is active");
-           Destroy(door);
-        }
+            Destroy(door);
+        }   
     }
 
     private IEnumerator PauseGame()

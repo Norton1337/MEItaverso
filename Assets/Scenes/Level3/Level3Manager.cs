@@ -8,10 +8,18 @@ public class Level3Manager : MonoBehaviour
     [SerializeField] private GameObject door;
 
     [SerializeField] private GameObject lever;
+    [SerializeField] private GameObject inCannonText;
+    [SerializeField] private GameObject gameManager;
+
+    [SerializeField] private GameObject canvas;
+    [SerializeField] private GameObject POLAROID;
+
+
 
     private bool hasButtonDropped = false;
     void Start()
-    {
+    {   
+        inCannonText.SetActive(false);
         //disable rigidbody
         buttons[1].GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
     
@@ -31,6 +39,16 @@ public class Level3Manager : MonoBehaviour
             dropButton();
             hasButtonDropped = true;
         }
+
+        if(gameManager.GetComponent<GameManager>().playerInCannon==true)
+        {
+           inCannonText.SetActive(true);
+          
+        }else{
+            inCannonText.SetActive(false);
+        }
+       
+        
         
     }
 

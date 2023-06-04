@@ -8,6 +8,8 @@ public class level5_manager : MonoBehaviour
     [SerializeField] private GameObject Lever;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject button;
+    [SerializeField] private GameObject Polaroid;
+
 
     private Vector2 startingPlayerPos;
     // Start is called before the first frame update

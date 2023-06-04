@@ -8,6 +8,8 @@ public class level2_manager : MonoBehaviour
     [SerializeField] private GameObject Lever;
     [SerializeField] private GameObject Button;
     [SerializeField] private GameObject DropablePlatform;
+    [SerializeField] private GameObject Polaroid;    
+
 
     public float ctdrDistance = 0;
     public float maxDistance = 15;
@@ -22,6 +24,7 @@ public class level2_manager : MonoBehaviour
         if(Button.GetComponent<Button>().isPressed && 
         Lever.GetComponent<LeverTrigger>().isActive){
            Destroy(door);
+           
         }
 
         //TODO: METER A PLATAFORMA A CAIR QUANDO O BOTAO FOR PRESSIONADO
@@ -29,7 +32,7 @@ public class level2_manager : MonoBehaviour
             DropablePlatform.transform.Translate(-0.01f,0,0);
             ctdrDistance += 0.01f;
         } else if (ctdrDistance >= maxDistance) {
-            Debug.Log("test");
+            
         }
     }
 }

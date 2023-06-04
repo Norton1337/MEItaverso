@@ -10,6 +10,16 @@ public class Level4Manager : MonoBehaviour
     [SerializeField] private GameObject vanishBlock;
     [SerializeField] private GameObject destroyableBlock;
 
+    [SerializeField] private GameObject reviveText;
+
+    [SerializeField] private GameObject Player;
+    [SerializeField] private GameObject Polaroid;
+
+    private bool isDestroyed = false;
+    
+    
+
+
     private bool hasCrateDropped = false;
     void Start()
     {
@@ -19,12 +29,22 @@ public class Level4Manager : MonoBehaviour
  
     void Update()
     {
-        if (endingButtons[0].GetComponent<Button>().isPressed && endingButtons[1].GetComponent<Button>().isPressed)
+        if( Player.GetComponent<PlayerController>().isDead == true){
+            reviveText.SetActive(true);
+        }else{
+            reviveText.SetActive(false);
+        }
+        
+        if(!isDestroyed){
+            if (endingButtons[0].GetComponent<Button>().isPressed && endingButtons[1].GetComponent<Button>().isPressed && !isDestroyed)
         {
+            isDestroyed = true;
             Destroy(door);
             Destroy(endingButtons[0]);
             Destroy(destroyableBlock);
         }
+        }
+       
         if(dropCrateButton.GetComponent<Button>().isPressed && !hasCrateDropped)
         {
             dropCrate();
