@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
         {
             //get aimDirection from player
             Vector3 aimDirection = playerObject.GetComponent<PlayerController>().GetAimDirection();
-            Debug.Log("Player exited the cannon!");
+
             playerInCannon = false;
 
             // Enable the player's sprite renderer to make it visible again

@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Transform aimPivot;
+    private Quaternion initialRotation;
+    public Vector3 aimDirection;
     public float speed = 10f;
     public float jumpForce = 20f;
     public GameObject aimTriangle;
     private float Move;
-    public Transform aimPivot;
+   
     private Rigidbody2D rb;
-    private Quaternion initialRotation;
     public bool inCannon;
-    public Vector3 aimDirection;
-
     public bool isLaunched = false;
 
     public int bounceCount = 0;
@@ -85,8 +85,7 @@ public class PlayerController : MonoBehaviour
         }
         
 
-        GetAimDirection();
-
+        GetAimDirection();        // Calculate the rotation angle
         // Calculate the rotation angle
         float angle = (Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg) + Mathf.Rad2Deg;
 
@@ -106,14 +105,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public Vector3 GetAimDirection()
-    {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        aimDirection = mousePos - transform.position;
-        aimDirection.z = 0f;
-        aimDirection.Normalize();
-        return aimDirection;
-    }
+ 
     
     private void OnCollisionEnter2D(Collision2D collision) {
         
@@ -158,6 +150,14 @@ public class PlayerController : MonoBehaviour
         }
     }
         
+    public Vector3 GetAimDirection()
+    {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        aimDirection = mousePos - transform.position;
+        aimDirection.z = 0f;
+        aimDirection.Normalize();
+        return aimDirection;
+    }
 
     public void PlayerUnUnAlive() {
         Destroy(spawnedSprite);
