@@ -162,8 +162,14 @@ public class PlayerController : MonoBehaviour
     public void PlayerUnUnAlive() {
         Destroy(spawnedSprite);
         bounceCount = 0;
-        isDead = !isDead;
-        deadBodyActive = !deadBodyActive;
+        if(isDead){
+            isDead = !isDead;
+        }
+        if(deadBodyActive){
+            deadBodyActive = !deadBodyActive;
+        }
+
+        
 
     }
 
