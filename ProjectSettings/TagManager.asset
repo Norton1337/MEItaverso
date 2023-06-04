@@ -12,6 +12,7 @@ TagManager:
   - MovableBase
   - gameover
   - Unalive
+  - BecomeReal
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Objects
   - 
   - 
   - 
@@ -46,6 +47,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3179149573
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

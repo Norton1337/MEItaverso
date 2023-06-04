@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        checkDead();
         isLaunched = GameManager.Instance.playerLaunched;
         // get is player in cannon from GameManager
         inCannon = GameManager.Instance.playerInCannon;
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
         if(!inCannon && !isLaunched)
         {
+            
             Move = Input.GetAxis("Horizontal");
             rb.velocity = new Vector2(Move * speed, rb.velocity.y);
             if (Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < 0.001f)
@@ -53,6 +55,7 @@ public class PlayerController : MonoBehaviour
 
         if (isLaunched)
         {
+            
             if(Mathf.Abs(rb.velocity.x) < 0.001f && Mathf.Abs(rb.velocity.y) < 0.001f){
                 GameManager.Instance.playerLaunched = false;
             }
@@ -97,7 +100,7 @@ public class PlayerController : MonoBehaviour
     }
     
     private void OnCollisionEnter2D(Collision2D collision) {
-        checkDead();
+        
 
         if(!isDead){
             if (collision.gameObject.CompareTag("Trampoline")) {
@@ -128,10 +131,15 @@ public class PlayerController : MonoBehaviour
 
     public void checkDead() {
         if (isDead && !deadBodyActive) {
-            Vector3 spawnPosition = transform.position;
-            spawnedSprite = Instantiate(ghostSprite, spawnPosition, Quaternion.identity);
-            spawnedSprite.transform.Rotate(0f,0f,90f);
-            deadBodyActive = true;
+            //check if player stopped moving
+            Debug.Log(Mathf.Abs(rb.velocity.x) + " " + Mathf.Abs(rb.velocity.y));
+            if(Mathf.Abs(rb.velocity.x) < 0.001f && Mathf.Abs(rb.velocity.y) < 0.001f){
+                Vector3 spawnPosition = transform.position;
+                spawnedSprite = Instantiate(ghostSprite, spawnPosition, Quaternion.identity);
+                spawnedSprite.transform.Rotate(0f,0f,90f);
+                deadBodyActive = true;
+            }
+            
         }
     }
         

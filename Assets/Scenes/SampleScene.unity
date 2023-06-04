@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 1292756505}
   - component: {fileID: 1292756504}
   - component: {fileID: 1292756506}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,6 +497,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trampoline
       objectReference: {fileID: 0}
+    - target: {fileID: 945653834952902817, guid: 6eaa7acda08c65a4e90b8f5e34bc67e9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 945653834952902847, guid: 6eaa7acda08c65a4e90b8f5e34bc67e9, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -554,6 +558,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button
       objectReference: {fileID: 0}
+    - target: {fileID: 1705770646850354168, guid: 850db1d5ef415544a93abb4fffb89900, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1705770646850354172, guid: 850db1d5ef415544a93abb4fffb89900, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -610,6 +618,14 @@ PrefabInstance:
     - target: {fileID: 3251962059555479272, guid: 5909f09495b7dac4988e8f0ed2c661cf, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251962059555479273, guid: 5909f09495b7dac4988e8f0ed2c661cf, type: 3}
+      propertyPath: groundCheck
+      value: 
+      objectReference: {fileID: 1292756505}
+    - target: {fileID: 3251962059555479273, guid: 5909f09495b7dac4988e8f0ed2c661cf, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 3251962059555479285, guid: 5909f09495b7dac4988e8f0ed2c661cf, type: 3}
       propertyPath: m_RootOrder
@@ -882,6 +898,10 @@ PrefabInstance:
     - target: {fileID: 8469206070363996220, guid: 75b77c9b4952d2044908f68ade97aa53, type: 3}
       propertyPath: m_Name
       value: Crate
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469206070363996220, guid: 75b77c9b4952d2044908f68ade97aa53, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75b77c9b4952d2044908f68ade97aa53, type: 3}

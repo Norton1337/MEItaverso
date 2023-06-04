@@ -10,9 +10,6 @@ public class CannonTrigger : MonoBehaviour
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E) && !inCannon)
         {
-            Debug.Log("Player entered the cannon!");
-            //get trigger position
-            
             GameManager.Instance.PlayerEnterCannon(transform.position);
         }
     }
