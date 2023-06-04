@@ -81,11 +81,7 @@ public class PlayerController : MonoBehaviour
 
        if (isDead && Input.GetKeyDown(KeyCode.X) 
        && spawnedSprite.GetComponent<Unalive>().playerInRange) {
-            Destroy(spawnedSprite);
-            bounceCount = 0;
-            isDead = !isDead;
-            deadBodyActive = !deadBodyActive;
-            //change player texture
+           PlayerUnUnAlive();
         }
     }
 
@@ -143,5 +139,13 @@ public class PlayerController : MonoBehaviour
         }
     }
         
+
+    public void PlayerUnUnAlive() {
+        Destroy(spawnedSprite);
+        bounceCount = 0;
+        isDead = !isDead;
+        deadBodyActive = !deadBodyActive;
+        //change player texture
+    }
     
 }

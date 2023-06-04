@@ -223,12 +223,20 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 945653834952902847, guid: 6eaa7acda08c65a4e90b8f5e34bc67e9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.1216333
+      objectReference: {fileID: 0}
+    - target: {fileID: 945653834952902847, guid: 6eaa7acda08c65a4e90b8f5e34bc67e9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2501912
+      objectReference: {fileID: 0}
+    - target: {fileID: 945653834952902847, guid: 6eaa7acda08c65a4e90b8f5e34bc67e9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.04663
+      value: -19.027445
       objectReference: {fileID: 0}
     - target: {fileID: 945653834952902847, guid: 6eaa7acda08c65a4e90b8f5e34bc67e9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1949856
+      value: -2.195079
       objectReference: {fileID: 0}
     - target: {fileID: 945653834952902847, guid: 6eaa7acda08c65a4e90b8f5e34bc67e9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1204,11 +1212,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3251962059555479285, guid: 5909f09495b7dac4988e8f0ed2c661cf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.87
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 3251962059555479285, guid: 5909f09495b7dac4988e8f0ed2c661cf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.85
+      value: -6.01
       objectReference: {fileID: 0}
     - target: {fileID: 3251962059555479285, guid: 5909f09495b7dac4988e8f0ed2c661cf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1255,7 +1263,7 @@ GameObject:
   - component: {fileID: 934447323}
   - component: {fileID: 934447322}
   m_Layer: 0
-  m_Name: manager
+  m_Name: Level5Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1992,6 +2000,7 @@ GameObject:
   - component: {fileID: 1825519233}
   - component: {fileID: 1825519232}
   - component: {fileID: 1825519231}
+  - component: {fileID: 1825519234}
   m_Layer: 0
   m_Name: Floor (9)
   m_TagString: Untagged
@@ -2092,6 +2101,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1825519234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825519230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a46123e7fdf18744bab7aeedbfbaf01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level5Manager: {fileID: 934447321}
 --- !u!1001 &1935460913
 PrefabInstance:
   m_ObjectHideFlags: 0

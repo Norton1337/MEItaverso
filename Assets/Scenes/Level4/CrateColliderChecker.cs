@@ -6,7 +6,7 @@ public class CrateColliderChecker : MonoBehaviour
 {
     [SerializeField] private GameObject vanishBlock;
     // Start is called before the first frame update
-     private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Triggered");
         if (other.gameObject.CompareTag("BecomeReal"))
