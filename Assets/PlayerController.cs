@@ -139,7 +139,6 @@ public class PlayerController : MonoBehaviour
 
     public void checkDead() {
         if (isDead && !deadBodyActive) {
-            //check if player stopped moving
            
             if(Mathf.Abs(rb.velocity.x) < 0.001f && Mathf.Abs(rb.velocity.y) < 0.001f){
                 Vector3 spawnPosition = transform.position;
