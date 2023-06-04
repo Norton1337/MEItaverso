@@ -133,6 +133,40 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5581229174735626024, guid: e149e7cf07d3dcd4bb8d3b63b1e5862d, type: 3}
   m_PrefabInstance: {fileID: 794812771}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &63914246
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63914241}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
+--- !u!114 &63914247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63914241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c678a5675055f247b82cb1ea460f29a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lever: {fileID: 63914241}
 --- !u!1 &264185138
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,7 +746,7 @@ GameObject:
   - component: {fileID: 1149344375}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1714,6 +1748,9 @@ MonoBehaviour:
   door: {fileID: 964615819}
   Lever: {fileID: 63914241}
   Button: {fileID: 28842843}
+  DropablePlatform: {fileID: 1424669303}
+  ctdrDistance: 0
+  maxDistance: 15
 --- !u!4 &2005042521
 Transform:
   m_ObjectHideFlags: 0

@@ -9,8 +9,12 @@ public class level1_management : MonoBehaviour
     [SerializeField] private GameObject Button;
 
     [SerializeField] private GameObject GameOverScreen;
+    [SerializeField] private GameObject Parede;
+    [SerializeField] private GameObject Player;
 
     public int ctdr = 0;
+    public float ctdrHeight = 0;
+    public float maxHeight = 3f;
 
 
 
@@ -23,6 +27,12 @@ public class level1_management : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Lever.GetComponent<LeverTrigger>().isActive && ctdrHeight < maxHeight) {
+            Parede.transform.Translate(0,0.01f,0);
+            ctdrHeight += 0.01f;
+        }
+
         if(Button.GetComponent<Button>().isPressed == true && ctdr < 1){
             GameOverScreen.SetActive(true);
             StartCoroutine(PauseGame());
@@ -45,6 +55,9 @@ public class level1_management : MonoBehaviour
 
         Time.timeScale = 1f;
         GameOverScreen.SetActive(false);
+    
+        Player.GetComponent<PlayerController>().isDead = true;
+        Player.GetComponent<PlayerController>().checkDead();
 
     }
 }

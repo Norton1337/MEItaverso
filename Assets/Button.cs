@@ -15,7 +15,7 @@ public class Button : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.transform.CompareTag("Player")  || collision.transform.CompareTag("Unalive")
+        if ((collision.transform.CompareTag("Player")  || collision.transform.CompareTag("Unalive"))
          && transform.position.y > minYpos.y)
         {
             Vector2 contactNormal = collision.GetContact(0).normal;

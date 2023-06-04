@@ -76,7 +76,8 @@ public class PlayerController : MonoBehaviour
         // Position the aim triangle close to the player
         aimTriangle.transform.position = transform.position + aimDirection * 2f;
 
-       if (isDead && Input.GetKeyDown(KeyCode.X)) {
+       if (isDead && Input.GetKeyDown(KeyCode.X) 
+       && spawnedSprite.GetComponent<Unalive>().playerInRange) {
             Destroy(spawnedSprite);
             bounceCount = 0;
             isDead = !isDead;

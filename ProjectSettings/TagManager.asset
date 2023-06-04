@@ -8,12 +8,10 @@ TagManager:
   - LeverTrigger
   - Trampoline
   - DeathButton
-<<<<<<< Updated upstream
   - Ground
-=======
   - MovableBase
   - gameover
->>>>>>> Stashed changes
+  - Unalive
   layers:
   - Default
   - TransparentFX
@@ -48,9 +46,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: BackGround
-    uniqueID: 4097629745
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

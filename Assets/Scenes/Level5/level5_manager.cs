@@ -6,6 +6,9 @@ public class level5_manager : MonoBehaviour
 {
     [SerializeField] private GameObject door;
     [SerializeField] private GameObject Lever;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject button;
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,8 +22,9 @@ public class level5_manager : MonoBehaviour
            Destroy(door);
         }
 
-       // if(GetComponent<Button>().isPressed){
-           //TODO: MUDAR ESTADO DO PERSONAGEM PARA DEAD AF  E UNALIVE
-        //}
+        if(button.GetComponent<Button>().isPressed){
+           player.GetComponent<PlayerController>().isDead = true;
+           player.GetComponent<PlayerController>().checkDead();
+        }
     }
 }

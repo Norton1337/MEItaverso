@@ -24,7 +24,7 @@ public class Level3Manager : MonoBehaviour
         if (buttons[0].GetComponent<Button>().isPressed && buttons[1].GetComponent<Button>().isPressed)
         {
 
-            Destroy(GameObject.Find("Door"));
+            Destroy(door);
         }
         if(lever.GetComponent<LeverTrigger>().isActive && !hasButtonDropped)
         {
