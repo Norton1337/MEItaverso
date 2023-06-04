@@ -8,7 +8,7 @@ public class SceneSwitchManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        Invoke("LoadNextScene", 8f);
+        Invoke("LoadNextScene", 15f);
     }
 
     private void Update()
